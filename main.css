@@ -12,7 +12,7 @@ div.transbox {
     opacity: 0.8;
 }  
 
-.item1 { grid-area: header; }
+.item1 { grid-area: header; text-align: center; }
 .item2 { grid-area: menu; text-align:center; }
 .item3 { grid-area: main; }
 .item4 { grid-area: footer; text-align:center; }
