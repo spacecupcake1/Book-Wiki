@@ -1,7 +1,10 @@
 package com.project.kathai;
 
-import java.io.File;
-import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,27 +12,46 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MainController implements CommandLineRunner{
+public class MainController implements CommandLineRunner {
 
-	private final Logger LOG = LoggerFactory.getLogger(MainController.class);
-	
-	File f = new File("Bookshelf.csv");
-	Scanner sc;
+    private final Logger LOG = LoggerFactory.getLogger(MainController.class);
 
-	@Override
-	public void run(String... args) throws Exception {
-	    sc = new Scanner(f);
-	    sc.nextLine();
-	    while (sc.hasNextLine()) {
-	        String line = sc.nextLine();
-	        String[] lineItems = line.split(";");
+    // Inject the necessary dependencies if required
 
-	            String bookId = lineItems[0].replaceAll("\"", "");
-	            String isbn = lineItems[1].replaceAll("\"", "");
-	            System.out.println("bookId: " + bookId);
-	            System.out.println("isbn: " + isbn);
-	            
-	    }
-	}
+    @Override
+    public void run(String... args) throws Exception {
+        // Establish database connection
+        Connection connection = null;
+        try {
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/kathai", "rigani", "Modao");
 
+            // Execute query
+            String query = "SELECT * FROM mytable";
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            // Process the result set
+            while (resultSet.next()) {
+                // Retrieve data from each row
+            	int id = resultSet.getInt("Book_Id");
+                String name = resultSet.getString("Title");
+                // ...
+
+                // Do something with the retrieved data (e.g., generate HTML)
+                LOG.info("ID: {}, Name: {}", id, name);
+                // ...
+            }
+        } catch (SQLException e) {
+            LOG.error("Error executing SQL query: {}", e.getMessage());
+        } finally {
+            // Close the connection
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    LOG.error("Error closing database connection: {}", e.getMessage());
+                }
+            }
+        }
+    }
 }
