@@ -1,34 +1,83 @@
-body{
-    background-image: url(Images/m6.png);
-    background-size: 110%;
-    background-repeat: no-repeat;
-    background-attachment: fixed; 
+:root {
+  --apricot: #FBC4AB;
+  --red: #6F0000;
+  --royal: #1E2895;
+  --blue: #8EC3F5;
+  --black: #000000;
+  --white: #FFFFFF;
 }
 
-div.transbox {
-    margin: 30px; 
-    background-color: #ffffff; 
-    background-size: 100% 100%; 
-    opacity: 0.7;
-}  
+body{
+  background-color: var(--apricot);
+  max-width: 1200px;
+  margin: auto;
+}
 
-.item1 { grid-area: header; text-align: center; }
-.item2 { grid-area: menu; text-align:center; } /* Try to find a way to make the menu */
-.item3 { grid-area: main; }
-.item4 { grid-area: footer; text-align:center; }
+h1{
+  font-family: 'Old English Five', sans-serif;
+  color: var(--red);
+  font-size: 70px;
+  -webkit-text-stroke: 2px var(--black);
+}
+
+h2{
+  text-align: center;
+  font-family: 'Old English Five', sans-serif;
+  font-size: 35px;
+  color: var(--white);
+}
+
+.item1 { 
+  grid-area: header; 
+  text-align: center; 
+}
+
+.item2 { 
+  grid-area: menu; 
+  text-align:center;
+  background-color: var(--blue);
+  color: var(--royal);
+}
+
+.item3 { 
+  grid-area: main; 
+  background-color: var(--royal);
+  color: var(--blue);
+  font-size: 25px;
+}
+
+.item4 { 
+  grid-area: footer; 
+  text-align:center; 
+  background-color: var(--royal);
+}
+
+b{
+ color: var(--black);
+}
 
 .grid-container {
     display: grid;
     grid-template-areas:
       'header header header header header header'
-      'menu main main main main main '                
+      'menu main main main main main '
       'footer footer footer footer footer footer';
     gap: 8px;
     padding: 5px;
   }
   
   .grid-container > div {
-    border: 15px solid rgba(0, 0, 0, 0.8);
-    padding: 5px 0;
-  } 
+    border: 5px solid var(--black);
+    padding: 2px 0;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .checked {
+    color: var(--red);
+  }
 
