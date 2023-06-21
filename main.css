@@ -113,10 +113,13 @@ h2{
   } 
 
   .sidebar li a.active {
-    background-color: #04AA6D;
-    color: white;
+    background-color: var(--apricot);
+    color: var(--black);
   }
-  
+
+  ul {
+    list-style: none;
+  }
   
   /* Media Query for Responsive Layout */
   @media screen and (max-width: 768px) {
