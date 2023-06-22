@@ -1,86 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.cdnfonts.com/css/old-english-five" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.cdnfonts.com/css/old-english-five"
+      rel="stylesheet"
+    />
     <title>Silent Reading</title>
 
     <style>
-        @import url('https://fonts.cdnfonts.com/css/old-english-five');
+      @import url("https://fonts.cdnfonts.com/css/old-english-five");
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="grid-container">
-    
-    <header>
+      <header>
         <!--<h1>Kathai</h1>-->
-        <img src="Images/f3.png" alt="Kathai">
-     </header>
- 
-    
-            <nav>
-                <div class="sidebar">
-              <h2><u>Menu</u></h2>
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="modu.html" class="active">Silent Reading</a></li>
-                <li><a href="form.html">Form</a></li>
-                <!-- Add more menu items here -->
-              </ul>
-            </div>
-            </nav>
-        
+        <img src="Images/f3.png" alt="Kathai" />
+      </header>
 
-        <main>
-            <h2><u>Silent Reading</u></h2>
-            <img src="Images/modu.jpg" alt="Silent Reading" class="center">
-            <br>
-            <p> <b>Author name:</b> Priest</p>
-            <p> <b>Description:</b> Luo Wenzhou, the captain of the crime investigation unit of Yan city, solving cases that 
-                    come after another with the assistance of Fei Du, an eccentric rich CEO who is somehow manages to be 
-                    involved in each and every single one of them.</p>
-            <p> <b>Release Year:</b> 2016 </p>
-            <p> <b>Original Language:</b> Chinese</p>
-            <p> <b>Rating:</b> 
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star-half-full checked"></span>
-            </p>
-            
+      <nav>
+        <button class="openbtn" onclick="openNav()"><h3>☰ Menu</h3></button>
+        <div id="mySidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >×</a
+          >
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="modu.html" class="active">Silent Reading</a></li>
+            <li><a href="alf.html">A Little Life</a></li>
+            <li><a href="form.html">Form</a></li>
+            <!-- Add more menu items here -->
+          </ul>
+        </div>
+      </nav>
 
-        </main>
+      <main>
+        <h2><u>Silent Reading</u></h2>
+        <img src="Images/modu.jpg" alt="Silent Reading" class="center" />
+        <br />
+        <p><b>Author name:</b> Priest</p>
+        <p>
+          <b>Description:</b> Luo Wenzhou, the captain of the crime
+          investigation unit of Yan city, solving cases that come after another
+          with the assistance of Fei Du, an eccentric rich CEO who is somehow
+          manages to be involved in each and every single one of them.
+        </p>
+        <p><b>Release Year:</b> 2016</p>
+        <p><b>Original Language:</b> Chinese</p>
+        <p>
+          <b>Rating:</b>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star-half-full checked"></span>
+        </p>
+      </main>
 
-        <footer>
-            <div style="min-width:31%; float:left; margin:10px; font-size: 20px;" >
-                <h3>Kontakt:</h3>
-                <p>Rigani Jegatheeswaran<br>INA22B<br>Email:rigani.jegatheeswaran@bbzbl.ch</p>
-            </div>
-            <div style="min-width:31%; float:left; margin:10px; font-size: 20px;">
-                <h3>Social:</h3>
-                <ul>
-                    <li><a href="https://www.facebook.com" target="_blank">Facebook</a></li>
-                    <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
-                    <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
-                </ul>
-            </div>
-            <div style="min-width:31%; float:left; margin:10px; font-size: 20px;" >
-                <h3>Links:</h3>
-                <ul>
-                    <li><a href="impressum.html">Impressum</a></li>
-                    <li><a href="disclamer.html">Disclamer</a></li>
-                    <li><a href="datenschutz.html">Datenschutz</a></li>
-                </ul>
-            </div>
-        </footer>
-
+      <footer>
+        <div style="min-width: 31%; float: left; margin: 10px; font-size: 20px">
+          <h3>Kontakt:</h3>
+          <p>
+            Rigani Jegatheeswaran<br />INA22B<br />Email:rigani.jegatheeswaran@bbzbl.ch
+          </p>
+        </div>
+        <div style="min-width: 31%; float: left; margin: 10px; font-size: 20px">
+          <h3>Social:</h3>
+          <ul>
+            <li>
+              <a href="https://www.facebook.com" target="_blank">Facebook</a>
+            </li>
+            <li>
+              <a href="https://www.twitter.com" target="_blank">Twitter</a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            </li>
+          </ul>
+        </div>
+        <div style="min-width: 31%; float: left; margin: 10px; font-size: 20px">
+          <h3>Links:</h3>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="disclamer.html">Disclamer</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
