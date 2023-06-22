@@ -107,7 +107,7 @@ main b{
     font-size: 30px;
   }
   
-  .sidebar a {
+  a {
     color: var(--apricot);
     text-decoration: none;
   }
