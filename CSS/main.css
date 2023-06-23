@@ -31,6 +31,12 @@ h2 {
   color: var(--white);
 }
 
+h3{
+  text-align: center;
+  color: var(--white);
+  font-size: 30px;
+}
+
 header {
   grid-area: header;
   text-align: center;
@@ -51,13 +57,12 @@ main {
 
 footer {
   grid-area: footer;
-  text-align: center;
   color: var(--apricot);
   /*background-color: var(--royal);*/
 }
 
 main b {
-  color: var(--royal);
+  color: var(--black);
 }
 
 .grid-container {
@@ -136,10 +141,6 @@ a {
   text-align: left;
 }
 
-/*.openbtn:hover {
-    background-color: var(--black);
-  }*/
-
 .sidebar li a:hover {
   background-color: var(--black);
   color: var(--white);
@@ -155,10 +156,11 @@ ul {
 }
 
 .footer {
-  min-width: 31%; 
-  float: left; 
-  margin: 10px; 
+  min-width: 31%;
+  float: left;
+  margin: 10px;
   font-size: 20px;
+text-align: center;
 }
 
 /* Media Query for Responsive Layout */
