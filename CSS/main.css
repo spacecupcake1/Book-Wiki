@@ -115,13 +115,20 @@ a {
   background-color: var(--black);
 }
 
-.sidebar a {
-  padding: 8px 8px 8px 32px;
+.sidebar a, .dropdown-btn {
+  padding: 8px 8px 8px 16px;
   text-decoration: none;
   font-size: 27px;
   display: block;
   transition: 0.3s;
   color: var(--red);
+  padding: 6px 8px 6px 16px;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
 }
 
 .sidebar .closebtn {
@@ -150,6 +157,18 @@ a {
   background-color: var(--apricot);
   color: var(--black);
 }
+
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
 
 ul {
   list-style: none;
