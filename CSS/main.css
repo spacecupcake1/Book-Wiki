@@ -21,7 +21,7 @@ h1 {
   font-family: "Old English Five", sans-serif;
   color: var(--red);
   font-size: 80px;
-  -webkit-text-stroke: 1px var(--apricot);
+  /* -webkit-text-stroke: 1px var(--apricot); */
 }
 
 h2 {
