@@ -10,6 +10,7 @@
 body {
   /*background-image: url(Images/space.gif);*/
   max-width: 1200px;
+  font-family: Arial, Helvetica, sans-serif;
   margin: auto;
   background: linear-gradient(var(--red), transparent),
     linear-gradient(to top left, var(--royal), transparent),
@@ -134,9 +135,10 @@ a {
 .sidebar .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
+  left: 60%;
   font-size: 36px;
   margin-left: 50px;
+  color: var(--red);
 }
 
 .openbtn {
@@ -148,12 +150,12 @@ a {
   text-align: left;
 }
 
-.sidebar li a:hover {
+.sidebar li a:hover, .dropdown-container a:hover, .dropdown-btn:hover{
   background-color: var(--black);
   color: var(--white);
 }
 
-.sidebar li a.active {
+.sidebar li a.active, .dropdown-container a.active {
   background-color: var(--apricot);
   color: var(--black);
 }
@@ -182,7 +184,6 @@ ul {
 text-align: center;
 }
 
-/* Media Query for Responsive Layout */
 @media screen and (max-width: 600px) {
   .grid-container {
     grid-template-areas:
