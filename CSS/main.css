@@ -149,12 +149,12 @@ a {
   text-align: left;
 }
 
-.sidebar li a:hover, .dropdown-container a:hover, .dropdown-btn:hover{
+.sidebar a:hover, .dropdown-container a:hover, .dropdown-btn:hover{
   background-color: var(--black);
   color: var(--white);
 }
 
-.sidebar li a.active, .dropdown-container a.active {
+.sidebar a.active, .dropdown-container a.active {
   background-color: var(--apricot);
   color: var(--black);
 }
