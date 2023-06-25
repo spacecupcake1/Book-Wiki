@@ -112,7 +112,6 @@ a {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-  color: var(--black);
   background-color: var(--black);
 }
 
