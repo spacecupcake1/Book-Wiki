@@ -5,4 +5,9 @@ This is a HTML Project, that I did during the first year.
  
  [My Website](./HTML/index.html)
 
+## Docker Instructions:
+
+docker build -t kathai .
+docker run -it -p 8080:80 kathai
+
 
