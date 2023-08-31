@@ -14,6 +14,9 @@
 </template>
 
 <script>
+export default {
+  name: 'Booktable'
+}
 
 </script>
 
