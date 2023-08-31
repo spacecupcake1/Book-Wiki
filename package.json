@@ -5,12 +5,15 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vue-cli-service serve"
   },
   "dependencies": {
+    "@vue/compiler-sfc": "^3.2.13",
+    "axios": "^1.5.0",
     "json-server": "^0.17.3",
     "react-router-dom": "^5.2.0",
-    "vue": "^3.3.4",
+    "vue": "^3.2.13",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {

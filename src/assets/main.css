@@ -65,18 +65,7 @@ body {
   padding: 15px;
 }
 
-.menu {   
-  float: left;
-  top: 0px;
-  /* width: 25%;
-  padding-left: 20px; */
-}
-
 /* Right column */
-.main {
-  float: left;
-  width: 75%;
-}
 
 /* Clear floats after the columns */
 .row::after {
