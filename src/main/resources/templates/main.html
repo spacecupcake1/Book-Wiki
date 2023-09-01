@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../static/css/main.css" th:href="@{/css/style.css}" rel="stylesheet" />
-    <title>Kathai</title>
-</head>
-<body>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+
+    <link href="/css/style.css" rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Kathai</title>
+  </head>
+  <body>
     <div class="item1">
-        <img src="../../../../Images/f3.png">
+      <img src="../../../../Images/f3.png" />
     </div>
 
     <div class="transbox">
-    <div class="grid-container">
-
+      <div class="grid-container">
         <div class="item2">
-            <b>Menu</b>
+          <b>Menu</b>
         </div>
 
         <div class="item3">
@@ -28,18 +28,17 @@
               <th>Author</th>
             </tr>
             <tr th:each="book : ${books}">
-                <td th:text="${book.id}"></td>
-                <td th:text="${book.title}"></td>
-                <td th:text="${book.author}"></td>
+              <td th:text="${book.Book_Id}"></td>
+              <td th:text="${book.Title}"></td>
+              <td th:text="${book.Authors}"></td>
             </tr>
           </table>
         </div>
 
         <div class="item4">
-            <b>footer</b>
+          <b>footer</b>
         </div>
-
-    </div> 
+      </div>
     </div>
-</body>
+  </body>
 </html>

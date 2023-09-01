@@ -9,39 +9,39 @@ import jakarta.persistence.Id;
 @Entity
 public class Book {
 	
-	@Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String title;
-    private String author;
+    private int Book_Id;
+    private String Title;
+    private String Authors;
 
-    public Book(int id, String title, String author) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
+    public Book(int Book_Id, String Title, String Authors) {
+        this.Book_Id = Book_Id;
+        this.Title = Title;
+        this.Authors = Authors;
     }
 
-    public void setId(int id) {
-		this.id = id;
+    public void setBook_Id(int id) {
+		this.Book_Id = id;
 	}
 
 	public void setTitle(String title) {
-		this.title = title;
+		this.Title = title;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setAuthors(String author) {
+		this.Authors = author;
 	}
 
-	public int getId() {
-        return id;
+	public int getBook_Id() {
+        return Book_Id;
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getAuthors() {
+        return Authors;
     }
 }
