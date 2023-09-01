@@ -4,9 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.project.kathai.model.Book;
 
-public interface BookRepository extends JpaRepository<Book, String> {
-
-    static void saveAll(Book book) {
-    }
-
+public interface BookRepository extends JpaRepository<Book, Integer> {
 }
