@@ -5,8 +5,11 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,29 +17,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.project.kathai.model.Book;
 import com.project.kathai.repository.BookRepository;
 
-@RestController
+@Controller
 @RequestMapping("/api/books")
 public class BookController {
 
-    private final BookRepository bookRepository;
-    private final Logger LOG = LoggerFactory.getLogger(BookController.class); 
-
-    public BookController(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
+    @Autowired
+    private BookRepository bookRepository;
+    private final Logger LOG = LoggerFactory.getLogger(BookController.class);
 
     // Get all books
     @GetMapping("/")
-    public ResponseEntity<List<Book>> getAllBooks() {
-        List<Book> books = bookRepository.findAll();
-        LOG.info("Retrieved {} books", books.size()); 
-        return new ResponseEntity<>(books, HttpStatus.OK);
+    public String getAllBooks(Model model, Book book) {
+        LOG.info("Getting All Books");
+
+    List<Book> books = bookRepository.findAll();
+    model.addAttribute("bookList", books);
+    return "bookList";
+
     }
+
 
     // Get a specific book by ID
     @GetMapping("/{id}")

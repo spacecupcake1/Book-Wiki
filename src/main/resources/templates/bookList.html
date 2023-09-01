@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <link href="../static/css/main.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <title>Kathai</title>
+  </head>
+  <body>
+    <div class="item1">
+      <img src="../../../../Images/f3.png" alt="Title" />
+    </div>
+
+    <div class="transbox">
+      <div class="grid-container">
+        <div class="item2">
+          <b>Menu</b>
+        </div>
+
+        <div class="item3">
+          <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Book</th>
+                <th>Author</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="book : ${bookList}">
+
+                <td th:text="${book.book_Id}">Book-Id</td>
+                <td th:text="${book.title}">Title</td>
+                <td th:text="${book.authors}">Author</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="item4">
+          <b>footer</b>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

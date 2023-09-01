@@ -14,44 +14,38 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Book_Id")
-    private int Book_Id;
+    private int book_Id;
 
     @Column(name = "Title")
-    private String Title;
+    private String title;
 
     @Column(name = "Authors")
-    private String Authors;
+    private String authors;
 
     // Constructors, getters, and setters for Title and Authors
 
     public int getBook_Id() {
-        return Book_Id;
+        return book_Id;
     }
     
     public Book() {
         // Default constructor with no arguments
     }
 
-    public Book(int book_Id, String title, String authors) {
-        Book_Id = book_Id;
-        Title = title;
-        Authors = authors;
-    }
-
     public String getTitle() {
-        return Title;
+        return title;
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.title = title;
     }
 
     public String getAuthors() {
-        return Authors;
+        return authors;
     }
 
     public void setAuthors(String authors) {
-        Authors = authors;
+        this.authors = authors;
     }
 
     public void setBook_Id(Integer id) {
