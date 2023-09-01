@@ -22,14 +22,23 @@ public class Book {
     @Column(name = "Authors")
     private String authors;
 
+    @Column(name= "Page_Count")
+    private String pages;
+
+    @Column(name = "My_Rating")
+    private String rating;
+
     // Constructors, getters, and setters for Title and Authors
 
+     public Book() {
+        // Default constructor with no arguments
+    }
+   
     public int getBook_Id() {
         return book_Id;
     }
-    
-    public Book() {
-        // Default constructor with no arguments
+
+    public void setBook_Id(Integer id) {
     }
 
     public String getTitle() {
@@ -48,8 +57,23 @@ public class Book {
         this.authors = authors;
     }
 
-    public void setBook_Id(Integer id) {
+    public String getPages() {
+        return pages;
     }
+
+    public void setPages(String page_count) {
+        this.pages = page_count;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setRating(String my_Rating) {
+        this.rating = my_Rating;
+    }
+
+    
 
     
 }
