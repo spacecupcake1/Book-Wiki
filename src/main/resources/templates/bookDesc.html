@@ -44,32 +44,26 @@
       <div class="grid-container">
 
         <div class="item3">
-          <h1>Book List</h1>
-          <table>
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Book</th>
-                <th>Author</th>
-                <th>Pages</th>
-                <th>Rating</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr th:each="book : ${bookList}">
+          <h1>Book Information</h1>
+		<div th:object="${bookDesc}" style="text-align: center;"> 
+			<h3>ID: </h3>
+			<span th:text="*{id}"></span>
+			<h3>Title: </h3>
+			<span th:text="*{title}"></span>
+			<h3>Author: </h3>
+			<span th:text="*{author}"></span>
+			<h3>Pages: </h3>
+			<span th:text="*{page}"></span>
+            <h3>Rating: </h3>
+			<span th:text="*{rating}"></span>
+			</div>
+		
+		</div>
 
-                <td th:text="${book.id}">Book-Id</td>
-                <td th:text="${book.title}">Title</td>
-                <td th:text="${book.author}">Author</td>
-                <td th:text="${book.page}">Pages</td>
-                <td th:text="${book.rating}">Rating</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <div class="item4">
-          <b>footer</b>
+          <!-- <b>footer</b> -->
         </div>
       </div>
     </div>

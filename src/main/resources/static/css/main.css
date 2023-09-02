@@ -17,6 +17,7 @@ body{
 
 div.transbox {
     margin: 20px; 
+    padding: 5px;
     background-color: #ffffff; 
     background-size: 100% 100%; 
     opacity: 0.8;
@@ -195,5 +196,9 @@ div.transbox {
   
   ul {
     list-style: none;
+  }
+  
+  h1{
+    text-align: center;
   }
 

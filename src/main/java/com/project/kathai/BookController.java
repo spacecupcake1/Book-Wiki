@@ -34,19 +34,28 @@ public class BookController {
     public String getAllBooks(Model model, Book book) {
         LOG.info("Getting All Books");
 
-    List<Book> books = bookRepository.findAll();
-    model.addAttribute("bookList", books);
-    return "bookList";
+        List<Book> books = bookRepository.findAll();
+        model.addAttribute("bookList", books);
+        return "bookList";
 
     }
 
-
     // Get a specific book by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Book> getBookById(@PathVariable Integer id) {
+    public String getBookById(Model model, @PathVariable int id) {
+        LOG.info("Getting Book with ID: {}", id);
+
+        // Find the book by ID
         Optional<Book> optionalBook = bookRepository.findById(id);
-        return optionalBook.map(book -> new ResponseEntity<>(book, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+
+        // Check if the book exists
+        if (optionalBook.isPresent()) {
+            model.addAttribute("bookDesc", optionalBook.get());
+            return "bookDesc"; // Return the view for displaying book details
+        } else {
+            // Handle the case where the book with the given ID is not found
+            return "bookNotFound"; // Create a "bookNotFound.html" template for this case
+        }
     }
 
     // Create a new book

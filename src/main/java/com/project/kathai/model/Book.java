@@ -14,16 +14,16 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Book_Id")
-    private int book_Id;
+    private int id;
 
     @Column(name = "Title")
     private String title;
 
     @Column(name = "Authors")
-    private String authors;
+    private String author;
 
     @Column(name= "Page_Count")
-    private String pages;
+    private String page;
 
     @Column(name = "My_Rating")
     private String rating;
@@ -34,8 +34,8 @@ public class Book {
         // Default constructor with no arguments
     }
    
-    public int getBook_Id() {
-        return book_Id;
+    public int getId() {
+        return id;
     }
 
     public void setBook_Id(Integer id) {
@@ -49,20 +49,20 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthors() {
-        return authors;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAuthors(String authors) {
-        this.authors = authors;
+    public void setAuthor(String authors) {
+        this.author = authors;
     }
 
-    public String getPages() {
-        return pages;
+    public String getPage() {
+        return page;
     }
 
-    public void setPages(String page_count) {
-        this.pages = page_count;
+    public void setPage(String page_count) {
+        this.page = page_count;
     }
 
     public String getRating() {
