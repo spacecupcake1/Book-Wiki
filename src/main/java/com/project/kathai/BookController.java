@@ -40,7 +40,6 @@ public class BookController {
 
     }
 
-    // Get a specific book by ID
     @GetMapping("/{id}")
     public String getBookById(Model model, @PathVariable int id) {
         LOG.info("Getting Book with ID: {}", id);
@@ -50,7 +49,28 @@ public class BookController {
 
         // Check if the book exists
         if (optionalBook.isPresent()) {
-            model.addAttribute("bookDesc", optionalBook.get());
+            // Get the book object
+            Book book = optionalBook.get();
+
+            /* // Construct the URL for the Google Books API
+            String title = book.getTitle();
+            String author = book.getAuthor();
+            String apiUrl = "https://www.googleapis.com/books/v1/volumes?q=" + title + "+inauthor:" + author;
+
+            // Fetch book details, including the cover image URL, from the Google Books API
+            RestTemplate restTemplate = new RestTemplate();
+            ResponseEntity<String> responseEntity = restTemplate.getForEntity(apiUrl, String.class);
+
+            if (responseEntity.getStatusCode().is2xxSuccessful()) {
+                String responseBody = responseEntity.getBody();
+                // Parse the JSON response to extract the cover image URL
+                String imageUrl = parseCoverImageUrlFromJson(responseBody);
+                book.setImageUrl(imageUrl);
+            } */
+
+            // Add the book to the model
+            model.addAttribute("bookDesc", book);
+
             return "bookDesc"; // Return the view for displaying book details
         } else {
             // Handle the case where the book with the given ID is not found
@@ -58,6 +78,10 @@ public class BookController {
         }
     }
 
+    /* private String parseCoverImageUrlFromJson(String jsonResponse) {
+        return jsonResponse;
+    }
+ */
     // Create a new book
     @PostMapping
     public ResponseEntity<Book> createBook(@RequestBody Book book) {

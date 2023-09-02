@@ -22,18 +22,21 @@ public class Book {
     @Column(name = "Authors")
     private String author;
 
-    @Column(name= "Page_Count")
+    @Column(name = "Page_Count")
     private String page;
 
     @Column(name = "My_Rating")
     private String rating;
 
+    @Column(name = "Image_URL")
+    private String imageUrl;
+
     // Constructors, getters, and setters for Title and Authors
 
-     public Book() {
+    public Book() {
         // Default constructor with no arguments
     }
-   
+
     public int getId() {
         return id;
     }
@@ -73,7 +76,12 @@ public class Book {
         this.rating = my_Rating;
     }
 
-    
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
-    
+    public void setImageUrl(String image_url) {
+        this.imageUrl = image_url;
+    }
+
 }
